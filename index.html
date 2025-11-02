@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>ModLoaderH — Universal Mod Loader for Games (v1.7.8.5)</title>
+  <meta name="description" content="ModLoaderH — a fast, lightweight mod loader for single‑player games. Clean UI, portable build, quick updates. Download the latest version and see setup instructions." />
+  <meta name="keywords" content="modloaderh, mod loader, trainer hub, cheat engine, wemod style, fling style, single player, game utilities" />
+  <link rel="canonical" href="https://neeldesh.github.io/ModLoaderH/" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ModLoaderH — Universal Mod Loader for Games" />
+  <meta property="og:description" content="Fast, lightweight mod loader for single‑player games. Download the latest version and get started in minutes." />
+  <meta property="og:image" content="https://neeldesh.github.io/ModLoaderH/assets/og-1200x630.jpg" />
+  <meta property="og:url" content="https://neeldesh.github.io/ModLoaderH/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ModLoaderH — Universal Mod Loader for Games" />
+  <meta name="twitter:description" content="Fast, lightweight mod loader for single‑player games. Download the latest version and get started in minutes." />
+  <meta name="twitter:image" content="https://neeldesh.github.io/ModLoaderH/assets/og-1200x630.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ModLoaderH",
+    "operatingSystem": "Windows 10/11",
+    "applicationCategory": "GameApplication",
+    "softwareVersion": "1.7.8.5",
+    "downloadUrl": "https://github.com/neeldesh/ModLoaderH/releases/download/1.7.8.5/ModLoaderH.zip",
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"},
+    "publisher": {"@type": "Organization","name": "ModLoaderH"}
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b0f19;--panel:#0f172a;--muted:#94a3b8;--text:#e5e7eb;--brand:#60a5fa;--brand2:#a78bfa;--ring:rgba(96,165,250,.35);
+      --ok:#10b981;--warn:#f59e0b;--danger:#ef4444
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 800px at 75% -10%,rgba(96,165,250,.12),transparent 60%),radial-gradient(800px 600px at -10% 20%,rgba(167,139,250,.12),transparent 60%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.35);color:#dbeafe;font-weight:600;font-size:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));backdrop-filter: blur(6px);transition:.2s ease;box-shadow:0 0 0 0 var(--ring)}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.2);box-shadow:0 0 0 6px var(--ring)}
+    .btn.primary{background:linear-gradient(180deg,rgba(96,165,250,.25),rgba(96,165,250,.12));border-color:rgba(96,165,250,.35)}
+    .btn.ghost{background:transparent}
+    .links{display:flex;gap:14px}
+    header.hero{padding:56px 0 24px}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    h1{margin:.3rem 0 1rem;font-size:44px;line-height:1.15;letter-spacing:.2px}
+    .lead{color:var(--muted);max-width:60ch}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .feature{padding:16px;border-radius:16px;background:var(--panel);border:1px solid rgba(255,255,255,.06)}
+    .feature h3{margin:0 0 6px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px}
+    .list{margin:0;padding-left:18px}
+    .footer{margin:40px 0 24px;color:var(--muted);font-size:14px}
+
+    @media (max-width: 960px){
+      .grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">ModLoaderH</div>
+      <div class="links">
+        <a class="btn ghost" href="#download">Download</a>
+        <a class="btn ghost" href="#setup">Setup</a>
+        <a class="btn" href="https://github.com/neeldesh/ModLoaderH" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="grid">
+        <div>
+          <span class="badge">Stable • v1.7.8.5</span>
+          <h1>Universal Mod Loader — fast, clean, portable</h1>
+          <p class="lead">All your trainers and mods in one lightweight hub. Minimal UI, quick toggles, portable build and optional update prompt. Designed for single‑player games.</p>
+          <p class="lead"><b>Direct download:</b> <a href="https://github.com/neeldesh/ModLoaderH/releases/download/1.7.8.5/ModLoaderH.zip">ModLoaderH.zip</a></p>
+          <div class="links" style="margin-top:10px">
+            <a class="btn primary" id="download" href="https://github.com/neeldesh/ModLoaderH/releases/download/1.7.8.5/ModLoaderH.zip">Download Now (ZIP)</a>
+            <a class="btn" href="https://github.com/neeldesh/ModLoaderH/releases">Releases</a>
+            <a class="btn ghost" href="https://cheatengine.org/" target="_blank" rel="noopener">Get Cheat Engine</a>
+          </div>
+          <div class="mono" style="margin-top:10px;color:#cbd5e1">SHA256: <span id="sha">—</span> (publish on Releases)</div>
+        </div>
+        <div class="card">
+          <div class="features">
+            <div class="feature"><h3>One Hub</h3><p>Manage trainers and mods together.</p></div>
+            <div class="feature"><h3>Fast Updates</h3><p>Optional prompt + changelog links.</p></div>
+            <div class="feature"><h3>Portable</h3><p>No installer; clean folder layout.</p></div>
+            <div class="feature"><h3>Keyboard First</h3><p>Quick toggles & hotkeys.</p></div>
+            <div class="feature"><h3>Open Source</h3><p>Auditable code on GitHub.</p></div>
+            <div class="feature"><h3>Docs & Help</h3><p>Setup guide and common fixes.</p></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid2" id="setup">
+      <div class="panel">
+        <h2>Quick Setup</h2>
+        <ol class="list">
+          <li>Download <b>ModLoaderH.zip</b> and extract it to a short path (e.g., <span class="mono">C:\ModLoaderH\</span>).</li>
+          <li>Run <span class="mono">ModLoaderH.exe</span> as Administrator on first launch.</li>
+          <li>Open your game, attach process if needed, enable toggles.</li>
+          <li>Drop new trainers/mods into the <span class="mono">/trainers</span> folder.</li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h2>FAQ</h2>
+        <details><summary>Is it safe?</summary><p>Open‑source build. Verify checksums on the Releases page.</p></details>
+        <details><summary>Online games?</summary><p>Designed for single‑player/offline only. Respect game ToS.</p></details>
+        <details><summary>Where to report issues?</summary><p>Open an issue on <a href="https://github.com/neeldesh/ModLoaderH/issues">GitHub Issues</a>.</p></details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> ModLoaderH • <a href="https://github.com/neeldesh/ModLoaderH">GitHub</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // If you later publish SHA256 on Releases, paste it here or fetch dynamically
+    // document.getElementById('sha').textContent = 'YOUR_SHA256_HERE';
+  </script>
+  
+  <!-- Toast + Sticky Download Dock (auto-inserted) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="dock" id="dock">
+    <button class="btn primary" id="dockBtn">⬇ Download</button>
+    <div class="mono" id="dockText">Checking latest release…</div>
+  </div>
+
+  <style>
+    /* Lightweight styles for toast, dock and progress */
+    .toast{position:fixed;top:18px;right:18px;background:rgba(15,23,42,.97);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;z-index:9999;transform:translateY(-20px);opacity:0;transition:.25s ease}
+    .toast.show{transform:translateY(0);opacity:1}
+    .dock{position:fixed;right:18px;bottom:18px;display:flex;gap:10px;align-items:center;background:rgba(15,23,42,.9);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:10px 12px;backdrop-filter: blur(8px);z-index:9998}
+    .progress{height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin-top:10px}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,#60a5fa,#a78bfa);transition:width .25s ease}
+  </style>
+
+  <script>
+    const API = 'https://api.github.com/repos/neeldesh/ModLoaderH/releases/latest';
+    const FALLBACK = 'https://github.com/neeldesh/ModLoaderH/releases/download/1.7.8.5/ModLoaderH.zip';
+
+    const toast = document.getElementById('toast');
+    const dockBtn = document.getElementById('dockBtn');
+    const dockText = document.getElementById('dockText');
+
+    // Find main download button/link on the page
+    const mainBtn = document.querySelector('a.btn.primary[href*="ModLoaderH.zip"], a.btn.primary#download');
+
+    function showToast(html){
+      toast.innerHTML = html; toast.classList.add('show');
+      setTimeout(()=> toast.classList.remove('show'), 5200);
+    }
+
+    function animateAndGo(url){
+      // Create a lightweight inline progress under the main button
+      let prog = document.getElementById('inlineProgress');
+      if(!prog && mainBtn){
+        prog = document.createElement('div');
+        prog.id = 'inlineProgress';
+        prog.className = 'progress';
+        prog.innerHTML = '<div class="bar" id="inlineBar"></div>';
+        mainBtn.parentElement.appendChild(prog);
+      }
+      const bar = document.getElementById('inlineBar');
+      let x = 0; const t = setInterval(()=>{
+        x += 12 + Math.random()*16; if(bar) bar.style.width = Math.min(100,x)+'%';
+        if(x>=100){ clearInterval(t); window.location.href = url; }
+      }, 120);
+    }
+
+    async function init(){
+      try{
+        const r = await fetch(API, {headers:{'Accept':'application/vnd.github+json'}});
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        const data = await r.json();
+        const tag = (data.tag_name||'').replace(/^v/i,'');
+        let assetUrl = FALLBACK;
+        if(Array.isArray(data.assets)){
+          const zip = data.assets.find(a=>/\.zip$/i.test(a.browser_download_url));
+          if(zip) assetUrl = zip.browser_download_url;
+        }
+        // Update visible link if present
+        const direct = document.querySelector('a#directLink');
+        if(direct) direct.href = assetUrl;
+        const verEl = document.getElementById('currVer');
+        if(verEl && tag) verEl.textContent = 'v'+tag;
+        dockText.textContent = tag ? ('Latest: v'+tag) : 'Latest release ready';
+        showToast('New version <b>v'+tag+'</b> available — <a style="text-decoration:underline" href="'+assetUrl+'">download</a>');
+        const go = ()=> animateAndGo(assetUrl);
+        if(mainBtn) mainBtn.addEventListener('click', e=>{ e.preventDefault(); go(); });
+        dockBtn.addEventListener('click', e=>{ e.preventDefault(); go(); });
+      }catch(e){
+        dockText.textContent = 'Fallback build ready';
+        const go = ()=> animateAndGo(FALLBACK);
+        if(mainBtn) mainBtn.addEventListener('click', e=>{ e.preventDefault(); go(); });
+        dockBtn.addEventListener('click', e=>{ e.preventDefault(); go(); });
+        showToast('Using fallback link due to API limit or offline.');
+      }
+    }
+    init();
+  </script>
+</body>
+</html>
